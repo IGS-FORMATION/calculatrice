@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>CALCULATRICE</title>
+</head>
+
+<body>
+    <div class="mx-auto overflow-hidden mt-20 lg:w-2/6 md:w-3/6 sm:w-4/6">
+        <div class="">
+            <h1 class="text-black text-center text-3xl text-blue-500 mb-4">Calculatrice</h1>
+            
+            <div class="border-2 border-blue-300 h-16 ml-16 w-72 md:w-auto rounded-2xl md:ml-2">
+                <i class="fa fa-clock-o ml-4"></i>
+                <!-- affichage des nombres à calculer -->
+                <div class="pt-1 p-5 pb-0 -mt-7 text-black text-right italic " id="calcul"></div>
+
+                <!-- affichage du resultat -->
+                <div class="p-2 -mt-4 text-black text-right"><span class="text-5xl" id="resultat"></span></div>
+            </div>
+
+            <div class="flex items-stretch">
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-2xl">
+                    <input type="button"
+                        class="rounded h-10 w-20 text-black bg-gray-400 shadow-lg border-2  hover:bg-blue-500 focus:outline-none"
+                        value="(" onclick="boutonParentheseOuvre()">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-2xl">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center text-black bg-gray-400 justify-center shadow-lg border-2  hover:bg-blue-500 focus:outline-none"
+                        value=")" onclick="boutonParentheseFermer()">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-2xl">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center text-black bg-gray-400 justify-center shadow-lg border-2  hover:bg-blue-500 focus:outline-none"
+                        value="%" onclick="boutonModulo()">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center  text-2xl">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center text-black bg-gray-400 justify-center shadow-lg border-2  hover:bg-blue-500 focus:outline-none"
+                        value="AC" onclick="boutonEfface()">
+                </div>
+            </div>
+
+            <div class="flex items-stretch bg-white ">
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                        value="7" onclick="monBouton(7)">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center  text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg  hover:bg-blue-500 focus:outline-none"
+                        value="8" onclick="monBouton(8)">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                        value="9" onclick="monBouton(9)">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-400 text-black justify-center shadow-lg border-2 hover:bg-blue-500 hover:border-2 focus:outline-none"
+                        value="÷" onclick="boutonDivision()">
+                </div>
+            </div>
+
+            <div class="flex items-stretch bg-white ">
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                        value="4" onclick="monBouton(4)">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                        value="5" onclick="monBouton(5)">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                        value="6" onclick="monBouton(6)">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 bg-gray-400 hover:bg-blue-500 focus:outline-none"
+                        value="x" onclick="boutonMultiplie()">
+                </div>
+            </div>
+
+            <div class="flex items-stretch bg-white ">
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                        value="1" onclick="monBouton(1)">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                        value="2" onclick="monBouton(2)">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                        value="3" onclick="monBouton(3)">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black bg-gray-400 justify-center shadow-lg border-2  hover:bg-blue-500 focus:outline-none"
+                        value="-" onclick="boutonSoustraire()">
+                </div>
+            </div>
+
+
+            <div class="flex items-stretch  mb-4">
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center   text-black bg-gray-300 justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                        value="0" onclick="monBouton(0)">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                        value="." onclick="boutonVirgule()">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center text-black bg-blue-700 justify-center shadow-lg border-2  hover:bg-blue-500 focus:outline-none"
+                        value="=" onclick="boutonResultat()">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl ">
+                    <input type="button"
+                        class="rounded h-10 w-20 flex items-center text-black justify-center shadow-lg border-2 bg-gray-400 hover:bg-blue-500 focus:outline-none"
+                        value="+" onclick="boutonAddition()">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        function monBouton(nombre) {
+            document.getElementById("calcul").innerHTML += nombre;
+        }
+        function boutonParentheseOuvre() {
+            document.getElementById("calcul").innerHTML += "(";
+        }
+        function boutonParentheseFermer() {
+            document.getElementById("calcul").innerHTML += ")";
+        }
+        function boutonModulo() {
+            document.getElementById("calcul").innerHTML += "%";
+        }
+        function boutonEfface() {
+            document.getElementById("calcul").innerHTML = "";
+            document.getElementById("resultat").innerHTML = "";
+        }
+        function boutonAddition() {
+            document.getElementById("calcul").innerHTML += "+";
+        }
+        function boutonSoustraire() {
+            document.getElementById("calcul").innerHTML += "-";
+        }
+        function boutonMultiplie() {
+            document.getElementById("calcul").innerHTML += "*";
+        }
+        function boutonDivision() {
+            document.getElementById("calcul").innerHTML += "/";
+        }
+        function boutonVirgule() {
+            document.getElementById("calcul").innerHTML += ".";
+        }
+
+        function boutonResultat() {
+            var egalite = "="
+            var egal = eval(document.getElementById('calcul').innerHTML);
+            document.getElementById('resultat').innerHTML = egal;
+        }
+
+
+    </script>
+</body>
+
+</html>
