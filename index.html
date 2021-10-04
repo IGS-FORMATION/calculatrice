@@ -212,13 +212,20 @@
         function boutonResultat() {
             var egalite = "=";
             var op =  document.getElementById('calcul')
-            var rien = false;
             var egal = eval(document.getElementById('calcul').innerHTML);
-            //afficher l'opération
-            op.textContent = op.innerHTML + egalite
+            var result = document.getElementById('resultat')
+            if(result !== undefined){
+                //afficher l'opération
+                // op.textContent = op.innerHTML + egalite
 
-            //resultat de l'opération
-            document.getElementById('resultat').innerHTML = egal;
+                //resultat de l'opération
+                result.textContent = egal;
+                
+            }
+            else{
+                
+                result.textContent = ""
+            }
        
         }
 
