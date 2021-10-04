@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <p id="alerte" class="italic text-2xl text-red-500"></p>
     <div class="mx-auto overflow-hidden mt-20 lg:w-2/6 md:w-3/6 sm:w-4/6">
         <div class="">
             <h1 class="text-black text-center text-3xl text-blue-500 mb-4">Calculatrice</h1>
@@ -156,11 +157,29 @@
                         value="+" onclick="boutonAddition()">
                 </div>
             </div>
-            <div class=" items-stretch  mb-4 ml-1">
+            <div class=" flex items-stretch  mb-4 ml-1">
                 <div class="flex-1 px-2 py-2 justify-center items-center text-white text-2xl ">
                     <input type="button"
                         class="rounded h-10 w-20 flex items-center   text-black bg-gray-300 justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
                         value="Del" onclick="boutonEffacer()">
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center mr-1 flex items-center text-white text-2xl ">
+                    <button
+                        class="rounded h-10 w-20 flex items-center bg-gray-300 text-black justify-center shadow-lg border-2 hover:bg-blue-500 focus:outline-none"
+                         onclick=""> <i class="fa fa-clock-o"></i></button>
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center mr-1 flex items-center text-white text-2xl ">
+                    <button
+                        class="rounded h-10 w-20 flex items-center text-black bg-gray-300 justify-center shadow-lg border-2  hover:bg-blue-500 focus:outline-none"
+                         onclick=""><i class=""></i></button>
+                </div>
+
+                <div class="flex-1 px-2 py-2 justify-center  mr-1 flex items-center text-white text-2xl ">
+                    <button
+                        class="rounded h-10 w-20 flex items-center text-black justify-center shadow-lg border-2 bg-gray-400 hover:bg-blue-500 focus:outline-none"
+                         onclick=""></button>
                 </div>
 
             </div>
@@ -210,10 +229,11 @@
         }
         
         function boutonResultat() {
-            var egalite = "=";
+            var egalite = "="
             var op =  document.getElementById('calcul')
             var egal = eval(document.getElementById('calcul').innerHTML);
             var result = document.getElementById('resultat')
+            var alert = document.getElementById('alerte')
             if(result !== undefined){
                 //afficher l'opération
                 // op.textContent = op.innerHTML + egalite
@@ -222,11 +242,7 @@
                 result.textContent = egal;
                 
             }
-            else{
-                
-                result.textContent = ""
-            }
-       
+
         }
 
 
